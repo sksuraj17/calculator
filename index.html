@@ -5,38 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <title>Calculator APP</title>
 </head>
 <body>
     <div class="container">
         <div class="calculator">
             <input type = "text" placeholder="0" id="output-screen">
-            <button onlick="clear()">CL</button>
-            <button onlick="del()">DEL</button>
-            <button onlick="display('%')">%</button>
-            <button onlick="display('/')">/</button>
-            <button onlick="display('7')">7</button>
-            <button onlick="display('8')">8</button>
-            <button onlick="display('9')">9</button>
-            <button onlick="display('*')">*</button>
-            <button onlick="display('4')">4</button>
-            <button onlick="display('5')">5</button>
-            <button onlick="display('6')">6</button>
-            <button onlick="display('-')">-</button>
-            <button onlick="display('1')">1</button>
-            <button onlick="display('2')">2</button>
-            <button onlick="display('3')">3</button>
-            <button onlick="display('+')">+</button>
-            <button onlick="display('.')">.</button>
-            <button onlick="display('0')">0</button>
-            <button onlick="Calculate()" class="equalto">=</button>
+            <button onclick="clear()">CL</button>
+            <button onclick="del()">DEL</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="Calculate()" class="equalto">=</button>
         </div>
     </div>
     <script>
         let outputScreen = document.getElementById("output-screen");
         function display(num){
-            outputScreen.value+=num
+        outputScreen.value+=num;
         }
-    </script>
+        function Calculate(){
+        try{
+            outputScreen.value=eval(outputScreen.value)
+        }
+        catch(err)
+        {
+            alert("Invalid value")
+        }
+        }
+</script>
 </body>
 </html>
