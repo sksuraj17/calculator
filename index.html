@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="calculator">
-            <input type = "text" placeholder="0">
+            <input type = "text" placeholder="0" id="output-screen">
             <button onlick="clear()">CL</button>
             <button onlick="del()">DEL</button>
             <button onlick="display('%')">%</button>
@@ -30,9 +30,13 @@
             <button onlick="display('.')">.</button>
             <button onlick="display('0')">0</button>
             <button onlick="Calculate()" class="equalto">=</button>
-
-
         </div>
     </div>
+    <script>
+        let outputScreen = document.getElementById("output-screen");
+        function display(num){
+            outputScreen.value+=num
+        }
+    </script>
 </body>
 </html>
